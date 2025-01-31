@@ -18,6 +18,9 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.navigation.NavController
 import com.example.testapp.R
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.rememberScrollState
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -25,122 +28,141 @@ fun RegisterPage(navController: NavController) {
     Box(modifier = Modifier.fillMaxSize()) {
         // Background Image
         Image(
-            painter = painterResource(id = R.drawable.signup),
+            painter = painterResource(id = R.drawable.random2),
             contentDescription = null,
             modifier = Modifier.fillMaxSize(),
             contentScale = ContentScale.Crop
         )
 
-        // Content Column
+        // Make the content scrollable
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(24.dp),
-            verticalArrangement = Arrangement.Center,
+                .verticalScroll(rememberScrollState()),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // Main title
-            Text(
-                text = "Register",
-                fontSize = 24.sp,
-                color = Color.Black,
-                modifier = Modifier.padding(bottom = 16.dp)
+            // Luxera Logo
+            Image(
+                painter = painterResource(id = R.drawable.luxera),
+                contentDescription = stringResource(R.string.logo_content_description),
+                modifier = Modifier
+                    .padding(top = 48.dp, bottom = 32.dp)
+                    .height(60.dp)
+                    .fillMaxWidth()
             )
 
-            // Name TextField
-            TextField(
-                value = "",
-                onValueChange = {},
-                label = { Text("Name") },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 16.dp),
-                colors = TextFieldDefaults.textFieldColors(
-                    containerColor = Color.White
-                ),
-                leadingIcon = { Icon(painter = painterResource(id = R.drawable.ic_check), contentDescription = null) }
-            )
+            Spacer(modifier = Modifier.height(32.dp))
 
-            // Email TextField
-            TextField(
-                value = "",
-                onValueChange = {},
-                label = { Text("Email") },
+            // Register content
+            Column(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 16.dp),
-                colors = TextFieldDefaults.textFieldColors(
-                    containerColor = Color.White
-                ),
-                leadingIcon = { Icon(painter = painterResource(id = R.drawable.ic_check), contentDescription = null) }
-            )
-
-            // Password TextField
-            TextField(
-                value = "",
-                onValueChange = {},
-                label = { Text("Password") },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 16.dp),
-                colors = TextFieldDefaults.textFieldColors(
-                    containerColor = Color.White
-                ),
-                visualTransformation = PasswordVisualTransformation(),
-                leadingIcon = { Icon(painter = painterResource(id = R.drawable.ic_visibility_off), contentDescription = null) }
-            )
-
-            // Confirm Password TextField
-            TextField(
-                value = "",
-                onValueChange = {},
-                label = { Text("Confirm Password") },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 16.dp),
-                colors = TextFieldDefaults.textFieldColors(
-                    containerColor = Color.White
-                ),
-                visualTransformation = PasswordVisualTransformation(),
-                leadingIcon = { Icon(painter = painterResource(id = R.drawable.ic_visibility_off), contentDescription = null) }
-            )
-
-            // Register Button
-            Button(
-                onClick = { 
-                    navController.navigate("home")  // Changed to navigate to home
-                },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 16.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = Color.Black)
+                    .padding(16.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
-                Text(text = "Register", color = Color.White)
-            }
+                // Main title
+                Text(
+                    text = stringResource(R.string.register),
+                    style = MaterialTheme.typography.headlineLarge,
+                    color = MaterialTheme.colorScheme.onBackground,
+                    modifier = Modifier.padding(bottom = 32.dp)
+                )
 
-            // Login Link
-            Text(
-                text = "Already have an account? Login",
-                color = Color.Gray,
-                modifier = Modifier
-                    .padding(top = 24.dp)
-                    .clickable {
-                        navController.navigate("login")
-                    }
-            )
+                // Name TextField
+                TextField(
+                    value = "",
+                    onValueChange = {},
+                    label = { Text("Name") },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(bottom = 16.dp),
+                    colors = TextFieldDefaults.textFieldColors(
+                        containerColor = Color.White
+                    ),
+                    leadingIcon = { Icon(painter = painterResource(id = R.drawable.ic_check), contentDescription = null) }
+                )
 
-            // Social Media Icons
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 32.dp),
-                horizontalArrangement = Arrangement.Center
-            ) {
-                Image(painter = painterResource(id = R.drawable.ic_facebook), contentDescription = null, modifier = Modifier.size(48.dp))
-                Spacer(modifier = Modifier.width(16.dp))
-                Image(painter = painterResource(id = R.drawable.ic_twitter), contentDescription = null, modifier = Modifier.size(48.dp))
-                Spacer(modifier = Modifier.width(16.dp))
-                Image(painter = painterResource(id = R.drawable.ic_google), contentDescription = null, modifier = Modifier.size(48.dp))
+                // Email TextField
+                TextField(
+                    value = "",
+                    onValueChange = {},
+                    label = { Text("Email") },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(bottom = 16.dp),
+                    colors = TextFieldDefaults.textFieldColors(
+                        containerColor = Color.White
+                    ),
+                    leadingIcon = { Icon(painter = painterResource(id = R.drawable.ic_check), contentDescription = null) }
+                )
+
+                // Password TextField
+                TextField(
+                    value = "",
+                    onValueChange = {},
+                    label = { Text("Password") },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(bottom = 16.dp),
+                    colors = TextFieldDefaults.textFieldColors(
+                        containerColor = Color.White
+                    ),
+                    visualTransformation = PasswordVisualTransformation(),
+                    leadingIcon = { Icon(painter = painterResource(id = R.drawable.ic_visibility_off), contentDescription = null) }
+                )
+
+                // Confirm Password TextField
+                TextField(
+                    value = "",
+                    onValueChange = {},
+                    label = { Text("Confirm Password") },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(bottom = 16.dp),
+                    colors = TextFieldDefaults.textFieldColors(
+                        containerColor = Color.White
+                    ),
+                    visualTransformation = PasswordVisualTransformation(),
+                    leadingIcon = { Icon(painter = painterResource(id = R.drawable.ic_visibility_off), contentDescription = null) }
+                )
+
+                // Register Button
+                Button(
+                    onClick = { 
+                        navController.navigate("home")  // Changed to navigate to home
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 16.dp),
+                    colors = ButtonDefaults.buttonColors(containerColor = Color.Black)
+                ) {
+                    Text(text = "Register", color = Color.White)
+                }
+
+                // Login Link
+                Text(
+                    text = "Already have an account? Login",
+                    color = Color.Gray,
+                    modifier = Modifier
+                        .padding(top = 24.dp)
+                        .clickable {
+                            navController.navigate("login")
+                        }
+                )
+
+                // Social Media Icons
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 32.dp),
+                    horizontalArrangement = Arrangement.Center
+                ) {
+                    Image(painter = painterResource(id = R.drawable.ic_facebook), contentDescription = null, modifier = Modifier.size(48.dp))
+                    Spacer(modifier = Modifier.width(16.dp))
+                    Image(painter = painterResource(id = R.drawable.ic_twitter), contentDescription = null, modifier = Modifier.size(48.dp))
+                    Spacer(modifier = Modifier.width(16.dp))
+                    Image(painter = painterResource(id = R.drawable.ic_google), contentDescription = null, modifier = Modifier.size(48.dp))
+                }
             }
         }
     }

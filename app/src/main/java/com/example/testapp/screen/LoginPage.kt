@@ -19,6 +19,8 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.navigation.NavController
 import com.example.testapp.R
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -32,99 +34,118 @@ fun LoginPage(navController: NavController) {
             contentScale = ContentScale.Crop
         )
 
-        // Content Column
+        // Make the content scrollable
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(16.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
+                .verticalScroll(rememberScrollState()),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(
-                text = stringResource(R.string.login),
-                style = MaterialTheme.typography.headlineLarge,
-                color = MaterialTheme.colorScheme.onBackground,
-                modifier = Modifier.padding(bottom = 32.dp)
+            // Luxera Logo
+            Image(
+                painter = painterResource(id = R.drawable.luxera),
+                contentDescription = stringResource(R.string.logo_content_description),
+                modifier = Modifier
+                    .padding(top = 48.dp, bottom = 32.dp)
+                    .height(60.dp)
+                    .fillMaxWidth()
             )
 
-            TextField(
-                value = "",
-                onValueChange = {},
-                label = { Text(stringResource(R.string.email)) },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 16.dp),
-                colors = TextFieldDefaults.colors(
-                    focusedTextColor = MaterialTheme.colorScheme.onSurface,
-                    unfocusedTextColor = MaterialTheme.colorScheme.onSurface,
-                    focusedContainerColor = MaterialTheme.colorScheme.surface,
-                    unfocusedContainerColor = MaterialTheme.colorScheme.surface
-                )
-            )
+            Spacer(modifier = Modifier.height(32.dp))
 
-            TextField(
-                value = "",
-                onValueChange = {},
-                label = { Text(stringResource(R.string.password)) },
-                visualTransformation = PasswordVisualTransformation(),
+            // Login content
+            Column(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 32.dp),
-                colors = TextFieldDefaults.colors(
-                    focusedTextColor = MaterialTheme.colorScheme.onSurface,
-                    unfocusedTextColor = MaterialTheme.colorScheme.onSurface,
-                    focusedContainerColor = MaterialTheme.colorScheme.surface,
-                    unfocusedContainerColor = MaterialTheme.colorScheme.surface
-                )
-            )
-
-            Button(
-                onClick = { navController.navigate("home") },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(50.dp),
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = MaterialTheme.colorScheme.primary,
-                    contentColor = MaterialTheme.colorScheme.onPrimary
-                )
-            ) {
-                Text(stringResource(R.string.login))
-            }
-
-            TextButton(
-                onClick = { navController.navigate("register") },
-                modifier = Modifier.padding(top = 16.dp)
+                    .padding(16.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
                 Text(
-                    stringResource(R.string.no_account),
-                    color = MaterialTheme.colorScheme.primary
+                    text = stringResource(R.string.login),
+                    style = MaterialTheme.typography.headlineLarge,
+                    color = MaterialTheme.colorScheme.onBackground,
+                    modifier = Modifier.padding(bottom = 32.dp)
                 )
-            }
 
-            // Social Media Icons
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 32.dp),
-                horizontalArrangement = Arrangement.Center
-            ) {
-                Image(
-                    painter = painterResource(id = R.drawable.ic_facebook),
-                    contentDescription = "Facebook",
-                    modifier = Modifier.size(48.dp)
+                TextField(
+                    value = "",
+                    onValueChange = {},
+                    label = { Text(stringResource(R.string.email)) },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(bottom = 16.dp),
+                    colors = TextFieldDefaults.colors(
+                        focusedTextColor = MaterialTheme.colorScheme.onSurface,
+                        unfocusedTextColor = MaterialTheme.colorScheme.onSurface,
+                        focusedContainerColor = MaterialTheme.colorScheme.surface,
+                        unfocusedContainerColor = MaterialTheme.colorScheme.surface
+                    )
                 )
-                Spacer(modifier = Modifier.width(16.dp))
-                Image(
-                    painter = painterResource(id = R.drawable.ic_twitter),
-                    contentDescription = "Twitter",
-                    modifier = Modifier.size(48.dp)
+
+                TextField(
+                    value = "",
+                    onValueChange = {},
+                    label = { Text(stringResource(R.string.password)) },
+                    visualTransformation = PasswordVisualTransformation(),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(bottom = 32.dp),
+                    colors = TextFieldDefaults.colors(
+                        focusedTextColor = MaterialTheme.colorScheme.onSurface,
+                        unfocusedTextColor = MaterialTheme.colorScheme.onSurface,
+                        focusedContainerColor = MaterialTheme.colorScheme.surface,
+                        unfocusedContainerColor = MaterialTheme.colorScheme.surface
+                    )
                 )
-                Spacer(modifier = Modifier.width(16.dp))
-                Image(
-                    painter = painterResource(id = R.drawable.ic_google),
-                    contentDescription = "Google",
-                    modifier = Modifier.size(48.dp)
-                )
+
+                Button(
+                    onClick = { navController.navigate("home") },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(50.dp),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = MaterialTheme.colorScheme.primary,
+                        contentColor = MaterialTheme.colorScheme.onPrimary
+                    )
+                ) {
+                    Text(stringResource(R.string.login))
+                }
+
+                TextButton(
+                    onClick = { navController.navigate("register") },
+                    modifier = Modifier.padding(top = 16.dp)
+                ) {
+                    Text(
+                        stringResource(R.string.no_account),
+                        color = MaterialTheme.colorScheme.primary
+                    )
+                }
+
+                // Social Media Icons
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 32.dp),
+                    horizontalArrangement = Arrangement.Center
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.ic_facebook),
+                        contentDescription = "Facebook",
+                        modifier = Modifier.size(48.dp)
+                    )
+                    Spacer(modifier = Modifier.width(16.dp))
+                    Image(
+                        painter = painterResource(id = R.drawable.ic_twitter),
+                        contentDescription = "Twitter",
+                        modifier = Modifier.size(48.dp)
+                    )
+                    Spacer(modifier = Modifier.width(16.dp))
+                    Image(
+                        painter = painterResource(id = R.drawable.ic_google),
+                        contentDescription = "Google",
+                        modifier = Modifier.size(48.dp)
+                    )
+                }
             }
         }
     }

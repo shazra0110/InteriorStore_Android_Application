@@ -30,9 +30,9 @@ data class UserProfile(
 
 object ProfileManager {
     var userProfile = UserProfile(
-        firstName = "Shazra",
-        lastName = "Faris",
-        email = "shazra@gmail.com",
+        firstName = "Charles",
+        lastName = "Leclerc",
+        email = "charles@gmail.com",
         address = "10/A, Kandy",
         paymentMethod = "Select Payment Method"
     )
