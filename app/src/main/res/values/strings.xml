@@ -1,0 +1,81 @@
+<resources>
+    <!-- App -->
+    <string name="app_name">TestApp</string>
+    
+    <!-- Common -->
+    <string name="search_placeholder">Search</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="changes_saved">Changes saved successfully!</string>
+    
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_favorites">Favorites</string>
+    <string name="nav_cart">Cart</string>
+    <string name="nav_profile">Profile</string>
+    
+    <!-- Login/Register -->
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="no_account">Don\'t have an account? Register</string>
+    
+    <!-- Profile -->
+    <string name="profile_title">Profile</string>
+    <string name="personal_information">Personal Information</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="address">Address</string>
+    <string name="payment_method">Payment Method</string>
+    <string name="payment_cod">Cash on Delivery</string>
+    <string name="payment_card">Card Payment</string>
+    <string name="sign_out">Sign Out</string>
+    
+    <!-- Categories -->
+    <string name="category_popular">Most Popular</string>
+    <string name="category_living">Living</string>
+    <string name="category_bedroom">Bedroom</string>
+    <string name="category_bathroom">Bathroom</string>
+    
+    <!-- Products -->
+    <string name="product_luxera_white">Luxera White</string>
+    <string name="product_luxera_wooden">Luxera Wooden</string>
+    <string name="product_art_chair">Art Chair</string>
+    <string name="product_modern_sofa">Modern Sofa</string>
+    <string name="product_turqoise_living">Turqoise Living</string>
+    <string name="product_wooden_lamp">Wooden Lamp</string>
+    <string name="product_kings_bed">King\'s Bed</string>
+    <string name="product_minimal_table">Minimal Table</string>
+    <string name="product_grand_lounge">Grand Lounge</string>
+    <string name="product_antique_mirror">Antique Mirror</string>
+    <string name="product_bathside_table">Bathside Table</string>
+    <string name="product_mirror_lamp">Mirror Lamp</string>
+    
+    <!-- Product Details -->
+    <string name="product_details">Product Details</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="add_to_favorites">Add to Favorites</string>
+    <string name="added_to_favorites">Added to Favorites</string>
+    <string name="added_to_cart">Added to Cart!</string>
+    
+    <!-- Cart -->
+    <string name="cart_title">Cart</string>
+    <string name="cart_empty">Your cart is empty</string>
+    <string name="total">Total</string>
+    <string name="checkout">Checkout</string>
+    
+    <!-- Favorites -->
+    <string name="favorites_title">Favorites</string>
+    <string name="favorites_empty">No favorites yet</string>
+    
+    <!-- Content Descriptions -->
+    <string name="logo_content_description">Luxera</string>
+    <string name="back_button">Back</string>
+    <string name="remove_item">Remove</string>
+    <string name="product_image">Product image</string>
+    
+    <!-- Social Media -->
+    <string name="social_facebook">Facebook</string>
+    <string name="social_twitter">Twitter</string>
+    <string name="social_google">Google</string>
+</resources>
