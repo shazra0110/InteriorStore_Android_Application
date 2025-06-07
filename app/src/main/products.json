@@ -1,0 +1,86 @@
+[
+  {
+    "id": 0,
+    "name": "Luxera Leather",
+    "price": "$599",
+    "imageResName": "popular11",
+    "description": "A modern leather chair perfect for any living room."
+  },
+  {
+    "id": 1,
+    "name": "Luxera Wooden",
+    "price": "$799",
+    "imageResName": "popular22",
+    "description": "A stylish wooden chair for a classic touch."
+  },
+  {
+    "id": 2,
+    "name": "Art Chair",
+    "price": "$299",
+    "imageResName": "popular333",
+    "description": "An artistic chair to add flair to your space."
+  },
+  {
+    "id": 3,
+    "name": "Modern Sofa",
+    "price": "$899",
+    "imageResName": "living11",
+    "description": "A modern sofa with premium comfort."
+  },
+  {
+    "id": 4,
+    "name": "Turqoise Living",
+    "price": "$649",
+    "imageResName": "living22",
+    "description": "Turquoise living set for a vibrant room."
+  },
+  {
+    "id": 5,
+    "name": "Wooden Lamp",
+    "price": "$199",
+    "imageResName": "living33",
+    "description": "A wooden lamp for warm lighting."
+  },
+  {
+    "id": 6,
+    "name": "King's Bed",
+    "price": "$999",
+    "imageResName": "bedroom11",
+    "description": "A king-sized bed for royal comfort."
+  },
+  {
+    "id": 7,
+    "name": "Minimal Table",
+    "price": "$349",
+    "imageResName": "bedroom22",
+    "description": "A minimal table for modern bedrooms."
+  },
+  {
+    "id": 8,
+    "name": "Grand Lounge",
+    "price": "$749",
+    "imageResName": "bedroom33",
+    "description": "A grand lounge chair for relaxation."
+  },
+  {
+    "id": 9,
+    "name": "Antique Mirror",
+    "price": "$459",
+    "imageResName": "bathroom11",
+    "description": "An antique mirror for a vintage look."
+  },
+  {
+    "id": 10,
+    "name": "Bathside Table",
+    "price": "$279",
+    "imageResName": "bathroom22",
+    "description": "A bathside table for convenience."
+  },
+  {
+    "id": 11,
+    "name": "Mirror Lamp",
+    "price": "$399",
+    "imageResName": "bathroom33",
+    "description": "A mirror lamp for perfect lighting."
+  }
+]
